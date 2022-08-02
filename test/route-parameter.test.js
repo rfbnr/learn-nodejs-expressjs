@@ -13,10 +13,8 @@ app.get("/categories/:id(\\d+)", (req, res) => {
     res.send(`idCategory: ${idCategory}`);
 });
 
-app.get("/products/:id(\\d+)/categories/:name", (req, res) => {
-    // const { idProduct, nameCategory } = req.params;
-    const idProduct = req.params.id;
-    const nameCategory = req.params.name;
+app.get("/products/:idProduct(\\d+)/categories/:nameCategory", (req, res) => {
+    const { idProduct, nameCategory } = req.params;
     res.send(`idProduct: ${idProduct}, nameCategory: ${nameCategory}`);
 });
 
